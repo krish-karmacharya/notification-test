@@ -1,8 +1,0 @@
-{
-  "_note": "SAMPLE DATA for offline testing only. Not real alerts.",
-  "results": [
-    { "title": "Sample: Flood watch for Karnali River", "description": "Water level is near the warning mark. People near the riverbank should stay alert.", "started_on": "2026-11-25T04:00:00+05:45", "district": "Kailali", "severity": "orange" },
-    { "title": "Sample: Cold wave advisory, Tarai districts", "description": "Dense fog and low temperatures expected overnight.", "started_on": "2026-11-25T06:30:00+05:45", "district": "Parsa, Bara, Rautahat", "severity": "yellow" },
-    { "title": "Sample: Forest fire reported", "description": "Fire reported near a community forest. Local authorities are responding.", "started_on": "2026-11-24T18:10:00+05:45", "district": "Dang", "severity": "info" }
-  ]
-}
