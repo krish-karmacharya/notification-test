@@ -1,0 +1,6 @@
+{
+  "Kathmandu": { "daily": { "time": ["2026-11-25","2026-11-26","2026-11-27"], "precipitation_sum": [0, 0.4, 0], "temperature_2m_max": [22, 21, 22], "temperature_2m_min": [8, 9, 8] } },
+  "Pokhara": { "daily": { "time": ["2026-11-25","2026-11-26","2026-11-27"], "precipitation_sum": [2, 54, 12], "temperature_2m_max": [24, 20, 21], "temperature_2m_min": [11, 12, 11] } },
+  "Biratnagar": { "daily": { "time": ["2026-11-25","2026-11-26","2026-11-27"], "precipitation_sum": [0, 0, 0], "temperature_2m_max": [27, 27, 28], "temperature_2m_min": [13, 13, 14] } },
+  "Nepalgunj": { "daily": { "time": ["2026-11-25","2026-11-26","2026-11-27"], "precipitation_sum": [0, 0, 0], "temperature_2m_max": [26, 26, 27], "temperature_2m_min": [10, 10, 11] } }
+}

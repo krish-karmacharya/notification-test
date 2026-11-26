@@ -1,0 +1,45 @@
+{
+  "_note": "Each source feeds one dashboard tab. 'verified' means the page is known to exist; the exact JSON endpoint or HTML layout still needs a check in your browser (DevTools > Network) because scraping targets change.",
+  "roads": [
+    {
+      "id": "nepal-police-1141",
+      "name": "Nepal Police road disruption notices",
+      "adapter": "html-notices",
+      "url": "https://www.nepalpolice.gov.np/notices/1141/",
+      "verified": "page exists (cited by Nepal Police road updates); HTML layout not confirmed"
+    }
+  ],
+  "weather": [
+    {
+      "id": "dhm-warnings",
+      "name": "DHM weather warnings",
+      "adapter": "json-list",
+      "url": "https://dhm.gov.np/mfd/#/weather/pages/weather-warning",
+      "apiUrl": "",
+      "verified": "page exists but is a JavaScript app; find the XHR it calls in DevTools and put it in apiUrl"
+    },
+    {
+      "id": "open-meteo-fallback",
+      "name": "Open-Meteo rain forecast (unofficial fallback)",
+      "adapter": "open-meteo",
+      "url": "https://api.open-meteo.com/v1/forecast",
+      "verified": "public API, no key; NOT a government source"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "bipad-alerts",
+      "name": "BIPAD / NDRRMA alerts",
+      "adapter": "json-list",
+      "url": "https://bipad.gov.np/",
+      "apiUrl": "https://bipadportal.gov.np/api/v1/alert/?ordering=-started_on&limit=20&format=json",
+      "verified": "portal exists; API path is from memory and unconfirmed"
+    }
+  ],
+  "cities": [
+    { "name": "Kathmandu", "lat": 27.7172, "lon": 85.324 },
+    { "name": "Pokhara", "lat": 28.2096, "lon": 83.9856 },
+    { "name": "Biratnagar", "lat": 26.4525, "lon": 87.2718 },
+    { "name": "Nepalgunj", "lat": 28.05, "lon": 81.6167 }
+  ]
+}

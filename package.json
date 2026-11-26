@@ -1,0 +1,23 @@
+{
+  "name": "nepal-alerts",
+  "version": "0.1.0",
+  "description": "Serverless road/weather/alert dashboard with AI-drafted push notifications",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "draft": "node scripts/draft.mjs",
+    "fetch:sample": "node scripts/fetch.mjs --fixtures && node scripts/draft.mjs",
+    "serve": "npx serve docs"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "firebase-admin": "^14.5.1"
+  },
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

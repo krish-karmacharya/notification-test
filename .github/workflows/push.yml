@@ -1,0 +1,50 @@
+name: Send push notification
+
+# Started by the Push button in the dashboard (or manually from the Actions tab).
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "nepal-roads | nepal-weather | nepal-alerts"
+        required: true
+        type: choice
+        options: [nepal-roads, nepal-weather, nepal-alerts]
+      title:
+        description: "Notification title (max 65 chars)"
+        required: true
+      body:
+        description: "Notification body (max 200 chars)"
+        required: true
+      link:
+        description: "Optional link to open"
+        required: false
+        default: ""
+      dry_run:
+        description: "Only print, do not send"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Send
+        run: node scripts/push.mjs
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          TOPIC: ${{ inputs.topic }}
+          TITLE: ${{ inputs.title }}
+          BODY: ${{ inputs.body }}
+          LINK: ${{ inputs.link }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '' }}

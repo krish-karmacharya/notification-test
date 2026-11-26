@@ -1,0 +1,74 @@
+{
+  "5e5633a6fd77": {
+    "title_en": "Sample: Mechi Highway completely blocked at …",
+    "body_en": "Source: Nepal Police road disruption notices. Check the official page for details.",
+    "title_ne": "",
+    "body_ne": "",
+    "by": "template",
+    "topic": "nepal-roads",
+    "created": "2026-11-25T04:33:42.948Z"
+  },
+  "ba381f1161e6": {
+    "title_en": "Sample: Mid-Hill Highway one-way traffic at …",
+    "body_en": "Source: Nepal Police road disruption notices. Check the official page for details.",
+    "title_ne": "",
+    "body_ne": "",
+    "by": "template",
+    "topic": "nepal-roads",
+    "created": "2026-11-25T04:33:42.948Z"
+  },
+  "4e619efb9378": {
+    "title_en": "Sample: BP Highway night travel restricted, …",
+    "body_en": "Source: Nepal Police road disruption notices. Check the official page for details.",
+    "title_ne": "",
+    "body_ne": "",
+    "by": "template",
+    "topic": "nepal-roads",
+    "created": "2026-11-25T04:33:42.948Z"
+  },
+  "f49c05349017": {
+    "title_en": "Sample: Heavy rainfall warning, Koshi Provin…",
+    "body_en": "Heavy rain likely in a few places for the next 24 hours.",
+    "title_ne": "",
+    "body_ne": "",
+    "by": "template",
+    "topic": "nepal-weather",
+    "created": "2026-11-25T04:33:42.948Z"
+  },
+  "e1c6ce5861c8": {
+    "title_en": "Pokhara: heavy rain possible (3-day peak 54 …",
+    "body_en": "2026-11-25: 2 mm rain, 11–24°C; 2026-11-26: 54 mm rain, 12–20°C; 2026-11-27: 12 mm rain, 11–21°C",
+    "title_ne": "",
+    "body_ne": "",
+    "by": "template",
+    "topic": "nepal-weather",
+    "created": "2026-11-25T04:33:42.948Z"
+  },
+  "6848c8735645": {
+    "title_en": "Sample: Dense fog, Tarai",
+    "body_en": "Dense fog expected in the morning hours.",
+    "title_ne": "",
+    "body_ne": "",
+    "by": "template",
+    "topic": "nepal-weather",
+    "created": "2026-11-25T04:33:42.948Z"
+  },
+  "56579e31177c": {
+    "title_en": "Sample: Flood watch for Karnali River",
+    "body_en": "Water level is near the warning mark. People near the riverbank should stay alert.",
+    "title_ne": "",
+    "body_ne": "",
+    "by": "template",
+    "topic": "nepal-alerts",
+    "created": "2026-11-25T04:33:42.948Z"
+  },
+  "5128eec4e951": {
+    "title_en": "Sample: Cold wave advisory, Tarai districts",
+    "body_en": "Dense fog and low temperatures expected overnight.",
+    "title_ne": "",
+    "body_ne": "",
+    "by": "template",
+    "topic": "nepal-alerts",
+    "created": "2026-11-25T04:33:42.948Z"
+  }
+}

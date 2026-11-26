@@ -1,0 +1,66 @@
+{
+  "updated": "2026-11-26T06:17:12.084Z",
+  "stale": false,
+  "items": [
+    {
+      "id": "f49c05349017",
+      "source": "DHM weather warnings",
+      "title": "Sample: Heavy rainfall warning, Koshi Province",
+      "body": "Heavy rain likely in a few places for the next 24 hours.",
+      "url": "https://dhm.gov.np/mfd/#/weather/pages/weather-warning",
+      "time": "2026-11-25",
+      "severity": "warning",
+      "place": "Koshi Province"
+    },
+    {
+      "id": "e1c6ce5861c8",
+      "source": "Open-Meteo rain forecast (unofficial fallback)",
+      "title": "Pokhara: heavy rain possible (3-day peak 54 mm)",
+      "body": "2026-11-25: 2 mm rain, 11–24°C; 2026-11-26: 54 mm rain, 12–20°C; 2026-11-27: 12 mm rain, 11–21°C",
+      "url": "https://open-meteo.com/",
+      "time": "2026-11-25",
+      "severity": "warning",
+      "place": "Pokhara"
+    },
+    {
+      "id": "6848c8735645",
+      "source": "DHM weather warnings",
+      "title": "Sample: Dense fog, Tarai",
+      "body": "Dense fog expected in the morning hours.",
+      "url": "https://dhm.gov.np/mfd/#/weather/pages/weather-warning",
+      "time": "2026-11-25",
+      "severity": "watch",
+      "place": "Tarai"
+    },
+    {
+      "id": "951ece133574",
+      "source": "Open-Meteo rain forecast (unofficial fallback)",
+      "title": "Kathmandu: no heavy rain expected (3-day peak 0.4 mm)",
+      "body": "2026-11-25: 0 mm rain, 8–22°C; 2026-11-26: 0.4 mm rain, 9–21°C; 2026-11-27: 0 mm rain, 8–22°C",
+      "url": "https://open-meteo.com/",
+      "time": "2026-11-25",
+      "severity": "info",
+      "place": "Kathmandu"
+    },
+    {
+      "id": "3d8df5f5ff69",
+      "source": "Open-Meteo rain forecast (unofficial fallback)",
+      "title": "Biratnagar: no heavy rain expected (3-day peak 0 mm)",
+      "body": "2026-11-25: 0 mm rain, 13–27°C; 2026-11-26: 0 mm rain, 13–27°C; 2026-11-27: 0 mm rain, 14–28°C",
+      "url": "https://open-meteo.com/",
+      "time": "2026-11-25",
+      "severity": "info",
+      "place": "Biratnagar"
+    },
+    {
+      "id": "cb196646ad76",
+      "source": "Open-Meteo rain forecast (unofficial fallback)",
+      "title": "Nepalgunj: no heavy rain expected (3-day peak 0 mm)",
+      "body": "2026-11-25: 0 mm rain, 10–26°C; 2026-11-26: 0 mm rain, 10–26°C; 2026-11-27: 0 mm rain, 11–27°C",
+      "url": "https://open-meteo.com/",
+      "time": "2026-11-25",
+      "severity": "info",
+      "place": "Nepalgunj"
+    }
+  ]
+}

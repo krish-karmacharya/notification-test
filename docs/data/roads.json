@@ -1,0 +1,46 @@
+{
+  "updated": "2026-11-26T06:17:12.084Z",
+  "stale": false,
+  "items": [
+    {
+      "id": "5e5633a6fd77",
+      "source": "Nepal Police road disruption notices",
+      "title": "Sample: Mechi Highway completely blocked at Rajduwali, Ilam due to landslide",
+      "body": "",
+      "url": "https://www.nepalpolice.gov.np/notices/1141/sample-1",
+      "time": null,
+      "severity": "danger",
+      "place": ""
+    },
+    {
+      "id": "ba381f1161e6",
+      "source": "Nepal Police road disruption notices",
+      "title": "Sample: Mid-Hill Highway one-way traffic at Bokhim, Bhojpur due to flooding",
+      "body": "",
+      "url": "https://www.nepalpolice.gov.np/notices/1141/sample-2",
+      "time": null,
+      "severity": "warning",
+      "place": ""
+    },
+    {
+      "id": "4e619efb9378",
+      "source": "Nepal Police road disruption notices",
+      "title": "Sample: BP Highway night travel restricted, Khurkot-Katunjebesi section",
+      "body": "",
+      "url": "https://www.nepalpolice.gov.np/notices/1141/sample-3",
+      "time": null,
+      "severity": "warning",
+      "place": ""
+    },
+    {
+      "id": "8b342813f04b",
+      "source": "Nepal Police road disruption notices",
+      "title": "Sample: Prithvi Highway normal traffic, all sections open",
+      "body": "",
+      "url": "https://www.nepalpolice.gov.np/notices/1141/sample-4",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    }
+  ]
+}

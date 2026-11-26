@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nepal Alerts Desk</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#fff; --ink:#14181f; --muted:#5b6472; --line:#e1e5ea; --accent:#1d4ed8;
+    --info:#5b6472; --watch:#a16207; --warning:#c2410c; --danger:#b91c1c;
+    --info-bg:#eef0f3; --watch-bg:#fef3c7; --warning-bg:#ffedd5; --danger-bg:#fee2e2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0e131b; --card:#161d28; --ink:#e8ecf2; --muted:#9aa4b2; --line:#263041; --accent:#7aa2ff;
+      --info:#9aa4b2; --watch:#fbbf24; --warning:#fb923c; --danger:#f87171;
+      --info-bg:#222b39; --watch-bg:#3a2f0b; --warning-bg:#3b2412; --danger-bg:#3d1717;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI","Noto Sans Devanagari",sans-serif}
+  header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--line);background:var(--card)}
+  h1{font-size:18px;margin:0}
+  .sub{color:var(--muted);font-size:13px}
+  .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 12px;border-radius:8px}
+  button:hover{border-color:var(--accent)}
+  button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  button.primary:disabled{opacity:.5;cursor:not-allowed}
+  nav{display:flex;gap:4px;padding:0 20px;border-bottom:1px solid var(--line);background:var(--card);overflow-x:auto}
+  nav button{border:0;border-bottom:3px solid transparent;border-radius:0;padding:12px 16px;background:none;white-space:nowrap}
+  nav button[aria-selected="true"]{border-bottom-color:var(--accent);font-weight:600}
+  .count{display:inline-block;min-width:20px;padding:0 6px;margin-left:6px;border-radius:10px;background:var(--info-bg);font-size:12px;text-align:center}
+  main{max-width:900px;margin:0 auto;padding:20px}
+  .bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:8px;flex-wrap:wrap}
+  .banner{padding:10px 14px;border-radius:8px;margin-bottom:14px;background:var(--watch-bg);color:var(--ink);border:1px solid var(--line);font-size:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-left-width:5px;border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .card.danger{border-left-color:var(--danger)} .card.warning{border-left-color:var(--warning)}
+  .card.watch{border-left-color:var(--watch)} .card.info{border-left-color:var(--info)}
+  .chip{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:999px;margin-right:8px;text-transform:uppercase;letter-spacing:.03em}
+  .chip.danger{background:var(--danger-bg);color:var(--danger)} .chip.warning{background:var(--warning-bg);color:var(--warning)}
+  .chip.watch{background:var(--watch-bg);color:var(--watch)} .chip.info{background:var(--info-bg);color:var(--info)}
+  .title{font-weight:600;margin:6px 0 2px}
+  .body{color:var(--muted);margin:2px 0 8px;white-space:pre-line}
+  .meta{font-size:12.5px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
+  .meta a{color:var(--accent)}
+  .editor{margin-top:12px;padding-top:12px;border-top:1px dashed var(--line)}
+  label{display:block;font-size:12.5px;color:var(--muted);margin:8px 0 3px}
+  input,textarea,select{width:100%;font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+  textarea{min-height:72px;resize:vertical}
+  .counter{float:right}
+  .over{color:var(--danger);font-weight:600}
+  .langs{display:flex;gap:14px;margin:6px 0}
+  .langs label{display:inline-flex;gap:6px;align-items:center;margin:0;color:var(--ink);font-size:14px}
+  .langs input{width:auto}
+  .preview{margin-top:10px;padding:10px 12px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+  .preview b{display:block} .preview span{color:var(--muted);font-size:14px}
+  .empty{padding:40px 0;text-align:center;color:var(--muted)}
+  dialog{border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);max-width:520px;width:calc(100% - 32px)}
+  dialog::backdrop{background:rgba(0,0,0,.5)}
+  .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;max-width:90%;z-index:10}
+  .hint{font-size:12.5px;color:var(--muted)}
+  details.src{margin-top:24px;font-size:13px;color:var(--muted)}
+  details.src li{margin:3px 0}
+  .ok{color:#15803d} .bad{color:var(--danger)}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Nepal Alerts Desk <span class="sub" lang="ne">· नेपाल सूचना डेस्क</span></h1>
+    <div class="sub" id="updated">Loading…</div>
+  </div>
+  <div class="row">
+    <button id="btnCompose">+ Custom notification</button>
+    <button id="btnSettings">Push settings</button>
+  </div>
+</header>
+<nav role="tablist" aria-label="Alert categories">
+  <button role="tab" data-tab="roads" aria-selected="true">Roads <span class="count" id="c-roads">–</span></button>
+  <button role="tab" data-tab="weather" aria-selected="false">Weather <span class="count" id="c-weather">–</span></button>
+  <button role="tab" data-tab="alerts" aria-selected="false">Alerts <span class="count" id="c-alerts">–</span></button>
+</nav>
+<main>
+  <div id="banner"></div>
+  <div class="bar">
+    <div class="sub" id="tabHint"></div>
+    <label style="margin:0;display:flex;gap:6px;align-items:center"><input type="checkbox" id="hideInfo" style="width:auto"> Hide “info” items</label>
+  </div>
+  <div id="list"></div>
+  <details class="src"><summary>Source status</summary><ul id="status"></ul></details>
+</main>
+
+<dialog id="dlgSettings">
+  <form method="dialog">
+    <h2 style="margin-top:0">Push settings</h2>
+    <p class="hint">Pressing Push starts the “Send push notification” workflow in your GitHub repo. This browser needs a GitHub fine-grained token for that. It is stored only in this browser (localStorage), never in the repo.</p>
+    <label>Repository (owner/name)</label><input id="sRepo" placeholder="krish-karmacharya/nepal-alerts">
+    <label>Branch</label><input id="sRef" placeholder="main">
+    <label>Fine-grained token (this repo only, permission: Actions → Read and write)</label><input id="sToken" type="password" autocomplete="off">
+    <div class="row" style="margin-top:14px;justify-content:flex-end">
+      <button value="cancel">Cancel</button>
+      <button class="primary" id="saveSettings" value="ok">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="dlgCompose">
+  <div>
+    <h2 style="margin-top:0">Custom notification</h2>
+    <label>Topic</label>
+    <select id="cTopic"><option value="nepal-roads">Roads</option><option value="nepal-weather">Weather</option><option value="nepal-alerts">Alerts</option></select>
+    <div id="cEditor"></div>
+    <div class="row" style="margin-top:14px;justify-content:flex-end"><button type="button" id="closeCompose">Close</button></div>
+  </div>
+</dialog>
+
+<script>
+const TABS = {
+  roads:   { topic: "nepal-roads",   hint: "Road status from Nepal Police and Department of Roads notices." },
+  weather: { topic: "nepal-weather", hint: "Weather warnings and rain outlook." },
+  alerts:  { topic: "nepal-alerts",  hint: "Disaster alerts: floods, cold wave, fire and more." },
+};
+const SEV_LABEL = { danger: "Danger", warning: "Warning", watch: "Watch", info: "Info" };
+const LIMIT = { title: 65, body: 200 };
+const state = { tab: "roads", data: {}, drafts: {}, status: null };
+const $ = (s, el = document) => el.querySelector(s);
+
+function el(tag, props = {}, ...kids) {
+  const e = document.createElement(tag);
+  if (tag === "button" && !("type" in props)) e.type = "button";
+  for (const [k, v] of Object.entries(props)) {
+    if (k === "class") e.className = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (v !== undefined && v !== null) e.setAttribute(k, v);
+  }
+  for (const kid of kids.flat()) e.append(kid instanceof Node ? kid : document.createTextNode(kid ?? ""));
+  return e;
+}
+
+function toast(msg) {
+  const t = el("div", { class: "toast", role: "status" }, msg);
+  document.body.append(t);
+  setTimeout(() => t.remove(), 5000);
+}
+
+const cfg = {
+  get: () => { try { return JSON.parse(localStorage.getItem("pushCfg") || "{}"); } catch { return {}; } },
+  set: (v) => { try { localStorage.setItem("pushCfg", JSON.stringify(v)); } catch {} },
+};
+
+async function load() {
+  const get = (f) => fetch(`data/${f}.json?t=${Date.now()}`).then((r) => { if (!r.ok) throw new Error(f); return r.json(); });
+  try {
+    const [roads, weather, alerts, drafts, status] = await Promise.all(
+      ["roads", "weather", "alerts", "drafts", "status"].map(get)
+    );
+    Object.assign(state, { data: { roads, weather, alerts }, drafts, status });
+  } catch (e) {
+    $("#list").replaceChildren(el("div", { class: "empty" },
+      "Could not load data. If you opened this file directly, serve the docs folder instead (npx serve docs)."));
+    $("#updated").textContent = "No data loaded";
+    return;
+  }
+  render();
+}
+
+function ago(iso) {
+  const m = Math.round((Date.now() - new Date(iso)) / 60000);
+  if (m < 1) return "just now";
+  if (m < 60) return `${m} min ago`;
+  const h = Math.round(m / 60);
+  return h < 48 ? `${h} h ago` : `${Math.round(h / 24)} days ago`;
+}
+
+function render() {
+  const { data, status } = state;
+  for (const t of Object.keys(TABS)) $("#c-" + t).textContent = data[t].items.length;
+  $("#updated").textContent = `Data updated ${ago(status.updated)} · refreshes about every 30 min`;
+  $("#tabHint").textContent = TABS[state.tab].hint;
+
+  const banner = $("#banner"); banner.replaceChildren();
+  if (status.mode === "fixtures") banner.append(el("div", { class: "banner" }, "Showing SAMPLE data from the fixtures folder, not real alerts."));
+  if (data[state.tab].stale) banner.append(el("div", { class: "banner" }, "All sources for this tab failed on the last run. Showing the previous data."));
+
+  const hide = $("#hideInfo").checked;
+  const items = data[state.tab].items.filter((i) => !(hide && i.severity === "info"));
+  const list = $("#list"); list.replaceChildren();
+  if (!items.length) list.append(el("div", { class: "empty" }, "Nothing to show."));
+  for (const it of items) list.append(card(it));
+
+  const ul = $("#status"); ul.replaceChildren();
+  for (const s of Object.values(status.sources)) {
+    ul.append(el("li", {}, el("span", { class: s.ok ? "ok" : "bad" }, s.ok ? "OK" : "FAILED"), ` ${s.name} (${s.tab})`, s.ok ? ` · ${s.count} items` : ` · ${s.error}`));
+  }
+}
+
+function card(it) {
+  const draft = state.drafts[it.id];
+  const wrap = el("article", { class: `card ${it.severity}` });
+  const btn = el("button", { onclick: () => toggleEditor(wrap, it, draft, btn) }, "Write notification");
+  wrap.append(
+    el("div", {}, el("span", { class: `chip ${it.severity}` }, SEV_LABEL[it.severity]), it.place || ""),
+    el("div", { class: "title" }, it.title),
+    it.body ? el("div", { class: "body" }, it.body) : "",
+    el("div", { class: "meta" },
+      el("span", {}, it.source),
+      it.time ? el("span", {}, it.time) : "",
+      it.url ? el("a", { href: it.url, target: "_blank", rel: "noopener noreferrer" }, "Open source") : "",
+      btn)
+  );
+  return wrap;
+}
+
+function toggleEditor(wrap, it, draft, btn) {
+  const open = $(".editor", wrap);
+  if (open) { open.remove(); btn.textContent = "Write notification"; return; }
+  btn.textContent = "Close editor";
+  wrap.append(editor({ topic: draft?.topic || TABS[state.tab].topic, draft: draft || {}, link: it.url }));
+}
+
+function editor({ topic, draft = {}, link = "" }) {
+  const box = el("div", { class: "editor" });
+  const hasNe = !!(draft.title_ne && draft.body_ne);
+  let lang = "en";
+  const title = el("input", { maxlength: 200 });
+  const body = el("textarea", { maxlength: 400 });
+  const url = el("input", { type: "url", placeholder: "https://… (optional)" }); url.value = link;
+  const tc = el("span", { class: "counter" }), bc = el("span", { class: "counter" });
+  const pvT = el("b"), pvB = el("span");
+  const note = el("div", { class: "hint" }, draft.by ? (draft.by === "template" ? "Plain template draft. Add ANTHROPIC_API_KEY to get written drafts, then edit as needed." : `Draft by ${draft.by}. Check every fact against the source before sending.`) : "");
+
+  const fill = () => { title.value = draft[`title_${lang}`] || ""; body.value = draft[`body_${lang}`] || ""; refresh(); };
+  const store = () => { draft[`title_${lang}`] = title.value; draft[`body_${lang}`] = body.value; };
+  const refresh = () => {
+    tc.textContent = `${title.value.length}/${LIMIT.title}`; tc.className = "counter" + (title.value.length > LIMIT.title ? " over" : "");
+    bc.textContent = `${body.value.length}/${LIMIT.body}`; bc.className = "counter" + (body.value.length > LIMIT.body ? " over" : "");
+    pvT.textContent = title.value || "(title)"; pvB.textContent = body.value || "(message)";
+    send.disabled = !title.value.trim() || !body.value.trim() || title.value.length > LIMIT.title || body.value.length > LIMIT.body;
+  };
+  title.addEventListener("input", () => { store(); refresh(); });
+  body.addEventListener("input", () => { store(); refresh(); });
+
+  const group = "lang" + Math.random().toString(36).slice(2);
+  const langs = el("div", { class: "langs" },
+    ...[["en", "English"], ["ne", "नेपाली"]].map(([v, t]) => {
+      const r = el("input", { type: "radio", name: group, value: v });
+      if (v === lang) r.checked = true;
+      r.addEventListener("change", () => { store(); lang = v; fill(); });
+      return el("label", {}, r, t);
+    })
+  );
+  if (!hasNe) langs.append(el("span", { class: "hint" }, "No Nepali draft yet, type it here or let the AI draft fill it."));
+
+  const send = el("button", { class: "primary", onclick: () => push(topic, title.value, body.value, url.value, false) }, "Push to users");
+  const test = el("button", { onclick: () => push(topic, title.value, body.value, url.value, true) }, "Dry run");
+  const copy = el("button", { onclick: () => { navigator.clipboard?.writeText(`${title.value}\n${body.value}`); toast("Copied"); } }, "Copy text");
+
+  box.append(
+    langs,
+    el("label", {}, "Title", tc), title,
+    el("label", {}, "Message", bc), body,
+    el("label", {}, "Link"), url,
+    el("div", { class: "preview" }, pvT, pvB),
+    note,
+    el("div", { class: "row", style: "margin-top:12px" }, send, test, copy, el("span", { class: "hint" }, `Topic: ${topic}`))
+  );
+  fill();
+  return box;
+}
+
+async function push(topic, title, body, link, dry) {
+  const c = cfg.get();
+  if (!c.repo || !c.token) { toast("Add your repo and token in Push settings first."); $("#dlgSettings").showModal(); return; }
+  if (!dry && !confirm(`Send to everyone subscribed to "${topic}"?\n\n${title}\n${body}\n\nThis cannot be undone.`)) return;
+  try {
+    const res = await fetch(`https://api.github.com/repos/${c.repo}/actions/workflows/push.yml/dispatches`, {
+      method: "POST",
+      headers: { Accept: "application/vnd.github+json", Authorization: `Bearer ${c.token}`, "X-GitHub-Api-Version": "2022-11-28" },
+      body: JSON.stringify({ ref: c.ref || "main", inputs: { topic, title, body, link: link || "", dry_run: !!dry } }),
+    });
+    if (res.status === 204) toast(dry ? "Dry run started. Check the Actions tab for the output." : "Push started. It should reach devices within a minute.");
+    else toast(`GitHub said ${res.status}: ${(await res.text()).slice(0, 140)}`);
+  } catch (e) { toast("Network error: " + e.message); }
+}
+
+document.querySelectorAll("nav button").forEach((b) => b.addEventListener("click", () => {
+  state.tab = b.dataset.tab;
+  document.querySelectorAll("nav button").forEach((x) => x.setAttribute("aria-selected", x === b));
+  if (state.status) render();
+}));
+$("#hideInfo").addEventListener("change", () => state.status && render());
+$("#btnSettings").addEventListener("click", () => {
+  const c = cfg.get(); $("#sRepo").value = c.repo || ""; $("#sRef").value = c.ref || "main"; $("#sToken").value = c.token || "";
+  $("#dlgSettings").showModal();
+});
+$("#saveSettings").addEventListener("click", () => {
+  cfg.set({ repo: $("#sRepo").value.trim(), ref: $("#sRef").value.trim() || "main", token: $("#sToken").value.trim() });
+});
+$("#closeCompose").addEventListener("click", () => $("#dlgCompose").close());
+$("#btnCompose").addEventListener("click", () => {
+  const t = TABS[state.tab].topic; $("#cTopic").value = t;
+  const mount = () => $("#cEditor").replaceChildren(editor({ topic: $("#cTopic").value }));
+  $("#cTopic").onchange = mount; mount(); $("#dlgCompose").showModal();
+});
+
+load();
+</script>
+</body>
+</html>
