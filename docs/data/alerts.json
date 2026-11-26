@@ -1,0 +1,156 @@
+{
+  "updated": "2026-11-26T17:27:28.930Z",
+  "stale": false,
+  "items": [
+    {
+      "id": "d77babd32560",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Chandrapur-4, Rautahat",
+      "body": "Basin:Bagmati\nElevation:120\nWarning level:122.0\nWater level:122.381",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "2ccf0a6bd8f7",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at",
+      "body": "Basin:Koshi\nElevation:852\nWarning level:3.0\nWater level:3.21780014038",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "f72e56b6798c",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Belbari-2, Morang",
+      "body": "Basin:Keshaliya\nElevation:123\nWarning level:125.3\nWater level:125.57",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "f72e56b6798c",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Belbari-2, Morang",
+      "body": "Basin:Keshaliya\nElevation:123\nWarning level:125.3\nWater level:125.819",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "f72e56b6798c",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Belbari-2, Morang",
+      "body": "Basin:Keshaliya\nElevation:123\nWarning level:125.3\nWater level:125.829",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "f72e56b6798c",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Belbari-2, Morang",
+      "body": "Basin:Keshaliya\nElevation:123\nWarning level:125.3\nWater level:125.561",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "b2d32c8451ec",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Road closed in Kaligandaki-1, Gulmi",
+      "body": "Road is closed due to Landslide",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "c62cc2e81ddb",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Chaukune-1, Surkhet",
+      "body": "Basin:Karnali\nElevation:320\nWarning level:9.0\nWater level:100013.726562",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "c62cc2e81ddb",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Chaukune-1, Surkhet",
+      "body": "Basin:Karnali\nElevation:320\nWarning level:9.0\nWater level:100013.726562",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "c62cc2e81ddb",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Chaukune-1, Surkhet",
+      "body": "Basin:Karnali\nElevation:320\nWarning level:9.0\nWater level:100013.726562",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "f51fbfede2ed",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Bakaiya-5, Makwanpur",
+      "body": "Basin:Lalbakaiya\nElevation:82\nWarning level:273.2\nWater level:273.226",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "9444a145552a",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Panauti-8, Kavrepalanchok",
+      "body": "Basin:Koshi\nElevation:None\nWarning level:4.6\nWater level:4.617",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "f91709ed3135",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Lalitpur-22, Lalitpur",
+      "body": "Basin:Bagmati\nElevation:1255\nWarning level:3.5\nWater level:3.515",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "0c0e9f07648a",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Flood warning at Godawari-14, Lalitpur",
+      "body": "Basin:Bagmati\nElevation:1332\nWarning level:1333.9\nWater level:1333.906",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    },
+    {
+      "id": "ae6c30ba1325",
+      "source": "BIPAD / NDRRMA alerts",
+      "title": "Heavy Rainfall at Chhayanath Rara-4, Mugu",
+      "body": "Basin: Karnali \n Elevation: 2750",
+      "url": "https://bipad.gov.np/",
+      "time": null,
+      "severity": "info",
+      "place": ""
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "updated": "2026-11-26T17:27:28.930Z",
+  "mode": "live",
+  "sources": {
+    "nepal-police-1141": {
+      "name": "Nepal Police road disruption notices",
+      "tab": "roads",
+      "ok": true,
+      "count": 6
+    },
+    "dhm-warnings": {
+      "name": "DHM weather warnings",
+      "tab": "weather",
+      "ok": false,
+      "error": "dhm-warnings: no apiUrl set in sources.json yet (see the note there)"
+    },
+    "open-meteo-fallback": {
+      "name": "Open-Meteo rain forecast (unofficial fallback)",
+      "tab": "weather",
+      "ok": true,
+      "count": 4
+    },
+    "bipad-alerts": {
+      "name": "BIPAD / NDRRMA alerts",
+      "tab": "alerts",
+      "ok": true,
+      "count": 15
+    }
+  }
+}
