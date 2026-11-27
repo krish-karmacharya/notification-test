@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T17:27:28.930Z",
+  "updated": "2026-11-27T01:06:19.710Z",
   "mode": "live",
   "sources": {
     "nepal-police-1141": {
@@ -17,8 +17,8 @@
     "open-meteo-fallback": {
       "name": "Open-Meteo rain forecast (unofficial fallback)",
       "tab": "weather",
-      "ok": true,
-      "count": 4
+      "ok": false,
+      "error": "fetch failed"
     },
     "bipad-alerts": {
       "name": "BIPAD / NDRRMA alerts",
