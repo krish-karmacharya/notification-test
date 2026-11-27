@@ -1,44 +1,44 @@
 {
-  "updated": "2026-11-27T09:51:04.892Z",
+  "updated": "2026-11-27T19:17:33.052Z",
   "stale": false,
   "items": [
     {
-      "id": "696f85029579",
+      "id": "1c20348c92d1",
       "source": "Open-Meteo rain forecast (unofficial fallback)",
       "title": "Kathmandu: no heavy rain expected (3-day peak 0 mm)",
-      "body": "2026-11-27: 0 mm rain, 8.3–20.7°C; 2026-11-28: 0 mm rain, 10–22.5°C; 2026-11-29: 0 mm rain, 11.6–21.6°C",
+      "body": "2026-11-28: 0 mm rain, 10–22.4°C; 2026-11-29: 0 mm rain, 11.8–21.8°C; 2026-11-30: 0 mm rain, 12.2–21.1°C",
       "url": "https://open-meteo.com/",
-      "time": "2026-11-27",
+      "time": "2026-11-28",
       "severity": "info",
       "place": "Kathmandu"
     },
     {
-      "id": "add4c4c62ecd",
+      "id": "f325c22d2a96",
       "source": "Open-Meteo rain forecast (unofficial fallback)",
       "title": "Pokhara: no heavy rain expected (3-day peak 0 mm)",
-      "body": "2026-11-27: 0 mm rain, 10.1–20.3°C; 2026-11-28: 0 mm rain, 10.9–21.9°C; 2026-11-29: 0 mm rain, 10.4–22.6°C",
+      "body": "2026-11-28: 0 mm rain, 10.9–22.2°C; 2026-11-29: 0 mm rain, 10.5–22.5°C; 2026-11-30: 0 mm rain, 9.5–22°C",
       "url": "https://open-meteo.com/",
-      "time": "2026-11-27",
+      "time": "2026-11-28",
       "severity": "info",
       "place": "Pokhara"
     },
     {
-      "id": "880ed2d76d02",
+      "id": "9334adb598aa",
       "source": "Open-Meteo rain forecast (unofficial fallback)",
       "title": "Biratnagar: no heavy rain expected (3-day peak 0 mm)",
-      "body": "2026-11-27: 0 mm rain, 16.4–26.1°C; 2026-11-28: 0 mm rain, 15.3–26.3°C; 2026-11-29: 0 mm rain, 14.7–26.8°C",
+      "body": "2026-11-28: 0 mm rain, 15.7–26.5°C; 2026-11-29: 0 mm rain, 15.2–26.9°C; 2026-11-30: 0 mm rain, 15.2–26°C",
       "url": "https://open-meteo.com/",
-      "time": "2026-11-27",
+      "time": "2026-11-28",
       "severity": "info",
       "place": "Biratnagar"
     },
     {
-      "id": "b2272322e905",
+      "id": "14e554be9436",
       "source": "Open-Meteo rain forecast (unofficial fallback)",
       "title": "Nepalgunj: no heavy rain expected (3-day peak 0 mm)",
-      "body": "2026-11-27: 0 mm rain, 12.4–24.5°C; 2026-11-28: 0 mm rain, 12.3–24.7°C; 2026-11-29: 0 mm rain, 12.2–24.6°C",
+      "body": "2026-11-28: 0 mm rain, 12.5–24.9°C; 2026-11-29: 0 mm rain, 12.1–24.7°C; 2026-11-30: 0 mm rain, 13.3–24.1°C",
       "url": "https://open-meteo.com/",
-      "time": "2026-11-27",
+      "time": "2026-11-28",
       "severity": "info",
       "place": "Nepalgunj"
     }
